@@ -16,10 +16,14 @@ const MONGODB_URL= process.env.MONGODB_URL
 
 const app = express()
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://172.20.10.7:8000');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  });
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
-app.use(cookieParser())
-app.use(cors())
 //routes
 app.use('/note', noteRoute)
 app.use("/user",userRouter)
