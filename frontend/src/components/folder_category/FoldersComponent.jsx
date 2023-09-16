@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { LuFolderOpen, LuFolderPlus } from "react-icons/lu";
 import CategoryComponent from "./CategoryComponent";
 import { FiCheck } from "react-icons/fi";
@@ -7,7 +7,7 @@ import { useFolderCategoryContext } from "../../context/folderCategoryContex";
 const FoldersComponent = () => {
 	const [toggle, setToggle] = useState(true);
 	const [folderName, setFolderName] = useState("");
-	const { setFolderCategoryFunction } =
+	const { setFolderCategoryFunction,folderCategory } =
 		useFolderCategoryContext();
 	const textInputDivRef = useRef(null);
 
@@ -30,6 +30,7 @@ const FoldersComponent = () => {
 			category: folderName,
 		};
 		setFolderCategoryFunction(newFolder);
+		localStorage.setItem("categoryList",JSON.stringify(folderCategory))
 		setFolderName("");
 		setToggle(false);
     toggleCategoryHandler()

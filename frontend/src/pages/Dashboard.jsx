@@ -1,14 +1,19 @@
 import { LogoWhite } from "../assets";
 import { CiSearch } from "react-icons/ci";
 import { AiOutlinePlus } from "react-icons/ai";
-import { CgFileDocument } from "react-icons/cg";
 import { FoldersComponent } from "../components/folder_category";
 import MoreSectionComponent from "../components/more_section/MoreSectionComponent";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
 import { useNavigate } from "react-router";
+import RecentComponent from "../components/RecentComponent";
+import { useFolderCategoryContext } from "../context/folderCategoryContex";
+import NoteCategoryComponent from "../components/folder_category/NoteCategoryComponent";
 
 function Dashboard() {
+  // note id stored in the context 
+  const {noteId}=useFolderCategoryContext()
+  console.log(noteId);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -39,7 +44,8 @@ function Dashboard() {
             Recents
           </h5>
           <div className="grid gap-2">
-            <div className="px-[20px] py-[10px] flex gap-2 bg-[#312EB5]">
+            <RecentComponent/>
+            {/* <div className="px-[20px] py-[10px] flex gap-2 bg-[#312EB5]">
               <CgFileDocument size={20} color="#ffffff" opacity={1} />
               <p className="text-white">Reflection on the Month of June</p>
             </div>
@@ -54,7 +60,7 @@ function Dashboard() {
               <p className="text-white text-opacity-60">
                 Reflection on the Month of June
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* Folder category section starts here*/}
@@ -73,7 +79,9 @@ function Dashboard() {
           </button>
         </div>
       </div>
-      <div className="bg-[#1c1c1c]"></div>
+      <div className="bg-[#1c1c1c]">
+        <NoteCategoryComponent/>
+      </div>
       <div></div>
     </section>
   );
