@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 // cors options
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://172.20.10.7:8000');
+    res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5173');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
