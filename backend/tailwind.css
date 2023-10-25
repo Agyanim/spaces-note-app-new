@@ -4,3 +4,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.show-try{
+    @apply flex  translate-y-0 translate-x-0 transition-all duration-1000
+}
+.end-point-list{
+    @apply text-blue-400 mb-5 font-serif text-lg
+}

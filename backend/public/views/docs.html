@@ -1,36 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../disk/scripts/tailwind.css" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../disk/scripts/tailwind.css" />
 
-    <title>Docs</title>
-  </head>
-  <body class="">
-    <div class="grid grid-cols-[20%_80%] h-[80rem]">
-      <aside class="bg-green-200 overflow-x-auto">
-        aside
-      </aside>
-      <div class="bg-yellow-100">
-        <nav class="flex justify-between mt-10">
-          <a class="ml-5" href="/"
-            ><img src="../images/logo.svg" alt="logo"
-          /></a>
-
-          <div class="flex justify-between w-[25%] mr-[10rem]">
-            <a href="/">Home</a>
-            <a href="/docs">Docs</a>
-            <a href="/github">GitHub</a>
-          </div>
-        </nav>
-        <main class="">
-          helo
-        </main>
-      </div>
-      <footer class="bg-slate-400 h-[5rem] col-span-2">
-        <h1>footer</h1>
-      </footer>
-    </div>
-  </body>
+		<title>Docs</title>
+	</head>
+	<body class="">
+		<div class="md:grid md:grid-cols-[20%_80%] h-[80rem]">
+			<!-- side menu -->
+			<aside
+				class="overflow-x-auto pt-[5rem] md:flex flex-col items-start hidden bg-gray-100"
+			>
+				<!-- user section -->
+				<section class="ml-[3rem]">
+					<h1 class="mb-2 text-xl font-bold text-blue-400 font-roboto">
+						<a href="">Users</a>
+					</h1>
+					<ul id="user" class=""></ul>
+				</section>
+				<!-- note section -->
+				<section class="ml-[3rem]">
+					<h1 class="mb-2 text-xl font-bold text-blue-400 font-roboto">
+						<a href="">Notes</a>
+					</h1>
+					<ul id="note" class=""></ul>
+				</section>
+				<!-- Category section -->
+				<section class="ml-[3rem]">
+					<h1 class="mb-2 text-xl font-bold text-blue-400 font-roboto">
+						<a href="">category</a>
+					</h1>
+					<ul id="category" class=""></ul>
+				</section>
+			</aside>
+			<!-- Navigation section -->
+			<div class="">
+				<nav class="flex justify-between mt-10">
+					<a class="ml-5" href="/"
+						><img src="../images/logo.svg" alt="logo"
+					/></a>
+					<div class="hidden md:flex justify-between w-[25%] mr-[10rem]">
+						<a href="/">Home</a>
+						<a href="/docs">Docs</a>
+						<a href="/github">GitHub</a>
+					</div>
+				</nav>
+				<!-- Main section -->
+				<main class="">
+					<!-- Introduction -->
+					<div class="md:ml-[3rem] md:mt-[10rem] md:w-[40%] mt-[3rem]">
+						<h1 class="ml-5 text-2xl text-pink-600 lg:text-3xl font-playfair text-bold font">
+							How to use it
+						</h1>
+						<p class="p-5 lg:leading-7 pfont-serif md:py-5 text-black/50">
+							Space Note App is a versatile platform that offers a simulated
+							environment for various types of note-related projects, providing
+							notes, categories,archived,favourite, and user data in JSON
+							format. It serves as a valuable resource for testing and
+							prototyping a real database. You can leverage Space Note App to
+							enhance your development, learning, and testing endeavors. Here
+							are some key features and example endpoints you can utilize within
+							Space Note App for your projects:
+						</p>
+					</div>
+				</main>
+			</div>
+			<!-- Footer section -->
+			<footer class="bg-slate-400 h-[5rem] col-span-2">
+				<h1>footer</h1>
+			</footer>
+		</div>
+	</body>
+	<script src="../script/docs.js"></script>
 </html>

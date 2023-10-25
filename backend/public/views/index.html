@@ -7,7 +7,7 @@
 		<title>Space not app</title>
 	</head>
 
-	<body class="flex items-center justify-center flex-col">
+	<body class="flex flex-col items-center justify-center">
 		<div class="lg:w-[75%] xl:w-[70%] mb-20">
 			<!-- Navigtation section -->
 			<nav class="flex justify-between mt-10">
@@ -15,34 +15,34 @@
 
 				<div class="hidden md:flex justify-between w-[25%]">
 					<a
-						class="hover:opacity-50 transition-all duration-75 text-amber-950/80"
+						class="transition-all duration-75 hover:opacity-50 text-amber-950/80"
 						href="/"
 						>Home</a
 					>
 					<a
-						class="hover:opacity-50 transition-all duration-75 text-amber-950/80"
+						class="transition-all duration-75 hover:opacity-50 text-amber-950/80"
 						href="/docs"
 						>Docs</a
 					>
 					<a
-						class="hover:opacity-50 transition-all duration-75 text-amber-950/80"
+						class="transition-all duration-75 hover:opacity-50 text-amber-950/80"
 						href="/github"
 						>GitHub</a
 					>
 				</div>
 			</nav>
 			<!-- Main container -->
-			<main class="flex flex-col justify-center items-center">
+			<main class="flex flex-col items-center justify-center">
 				<!-- First section -->
 				<section
-					class="flex flex-wrap justify-center items-center lg:justify-between w-full lg:flex-row"
+					class="flex flex-wrap items-center justify-center w-full lg:justify-between lg:flex-row"
 				>
 					<!-- Header and app description -->
 					<div
-						class="flex flex-col justify-center items-center md:justify-start md:items-start mt-5"
+						class="flex flex-col items-center justify-center mt-5 md:justify-start md:items-start"
 					>
 						<h1
-							class="mb-5 text-3xl xl:text-4xl font-bold text-amber-950 font-roboto"
+							class="mb-5 text-3xl font-bold xl:text-4xl text-amber-950 font-roboto"
 						>
 							Space Note API
 						</h1>
@@ -53,7 +53,7 @@
 							applications or note web app prototype.
 						</p>
 						<button
-							class="w-52 md:w-56 py-3 mb-2 relative text-white rounded bg-violet-700 hover:opacity-60 transition-all duration-75 font-mono text-lg"
+							class="relative py-3 mb-2 font-mono text-lg text-white transition-all duration-75 rounded w-52 md:w-56 bg-violet-700 hover:opacity-60"
 						>
 							<a class="-ml-20" href="/docs"
 								><img
@@ -64,7 +64,7 @@
 							>
 						</button>
 						<button
-							class="w-52 md:w-56 py-3 text-white relative bg-pink-600 rounded hover:opacity-60 transition-all duration-75 font-mono text-lg"
+							class="relative py-3 font-mono text-lg text-white transition-all duration-75 bg-pink-600 rounded w-52 md:w-56 hover:opacity-60"
 						>
 							<a class="-ml-8" href="/docs"
 								><img
@@ -83,7 +83,7 @@
 					/>
 				</section>
 				<!-- App overview -->
-				<section class="flex flex-col justify-center items-center mt-20">
+				<section class="flex flex-col items-center justify-center mt-20">
 					<h1
 						class="text-xl px-10 my-5 md:p-5 lg:text-2xl md:w-[25rem] text-center text-amber-950/80 font-bold font-playfair"
 					>
@@ -91,7 +91,7 @@
 						API?
 					</h1>
 					<p
-						class="text-sm p-5 md:text-base leading-loose text-black/60 text-center font-serif"
+						class="p-5 font-serif text-sm leading-loose text-center md:text-base text-black/60"
 					>
 						One notable option is the <strong>Space Note API</strong>, which
 						provides a convenient online REST API for generating pseudo-real
@@ -102,7 +102,7 @@
 						resource for web and application development.
 					</p>
 					<p
-						class="text-sm p-5 md:text-base text-black/60 text-center font-serif"
+						class="p-5 font-serif text-sm text-center md:text-base text-black/60"
 					>
 						If you have any specific questions or need assistance with
 						integrating Space Note API into your project, don't hesitate to
@@ -113,7 +113,7 @@
 			<!-- Setting Example -->
 			<section class="ml-0">
 				<h1
-					class="py-4 md:pl-2 text-pink-600 text-center font-bold md:text-left text-sm md:text-3xl font-playfair"
+					class="py-4 text-sm font-bold text-center text-pink-600 md:pl-2 md:text-left md:text-3xl font-playfair"
 				>
 					Example code
 				</h1>
@@ -128,16 +128,16 @@
 				</div>
 			</section>
 			<!-- display results for example code -->
-			<section class="ml-0 mt-5">
+			<section class="mt-5 ml-0">
 				<button
 					id="try-btn"
-					class="ml-5 bg-pink-600 text-white lg:text-lg font-bold p-2 rounded hover:opacity-70"
+					class="p-2 ml-5 font-bold text-white bg-pink-600 rounded lg:text-lg hover:opacity-70"
 				>
 					Try it
 				</button>
-				<div class="mt-5 bg-gray-100">
+				<div id="try-content" class="hidden  mt-5 bg-gray-100 translate-y-[7rem] translate-x-[10rem] transition-all duration-1000">
 					<p
-						class="text-sm md:text-base overflow-y-auto p-5 font-mono text-black/60"
+						class="p-5 overflow-y-auto font-mono text-sm md:text-base text-black/60"
 					>
 						{ <br />
 						"message": "All notes fetched successfully",<br />
@@ -161,14 +161,14 @@
 			<!-- Resources section -->
 			<section class="mt-[5rem]">
 				<h1
-					class="py-4 md:pl-2 text-pink-600 text-center font-bold md:text-left text-sm md:text-3xl font-playfair"
+					class="py-4 text-sm font-bold text-center text-pink-600 md:pl-2 md:text-left md:text-3xl font-playfair"
 				>
 					Resources
 				</h1>
 				<div class="md:w-[30rem] px-8">
 					<ul class="">
 						<li class="flex justify-between">
-							<span class="text-blue-400 font-ubuntu text-lg"
+							<span class="text-lg text-blue-400 font-ubuntu"
 								><a href="https://space-note-app.onrender.com/note/test"
 									>Note</a
 								></span
@@ -176,7 +176,7 @@
 							<p>50</p>
 						</li>
 						<li class="flex justify-between">
-							<span class="text-blue-400 font-ubuntu text-lg"
+							<span class="text-lg text-blue-400 font-ubuntu"
 								><a href="https://space-note-app.onrender.com/note/test"
 									>Category</a
 								></span
@@ -184,7 +184,7 @@
 							<p>20</p>
 						</li>
 						<li class="flex justify-between">
-							<span class="text-blue-400 font-ubuntu text-lg"
+							<span class="text-lg text-blue-400 font-ubuntu"
 								><a href="https://space-note-app.onrender.com/note/test"
 									>User</a
 								></span
@@ -192,14 +192,14 @@
 							<p>20</p>
 						</li>
 						<li class="flex justify-between">
-							<span class="text-blue-400 font-ubuntu text-lg"
+							<span class="text-lg text-blue-400 font-ubuntu"
 								><a href="https://space-note-app.onrender.com/note/test"
 									>Favourite</a
 								></span
 							>
 						</li>
 						<li class="flex justify-between">
-							<span class="text-blue-400 font-ubuntu text-lg"
+							<span class="text-lg text-blue-400 font-ubuntu"
 								><a href="https://space-note-app.onrender.com/note/test"
 									>Archive</a
 								></span
@@ -212,7 +212,7 @@
 			<!-- Routes -->
 			<section class="mt-[5rem]">
 				<h1
-					class="py-4 md:pl-2 text-pink-600 text-center font-bold md:text-left text-sm md:text-3xl font-playfair"
+					class="py-4 text-sm font-bold text-center text-pink-600 md:pl-2 md:text-left md:text-3xl font-playfair"
 				>
 					Test Routes
 				</h1>
@@ -220,7 +220,7 @@
 					<ul class="">
 						<li class="flex justify-between">
 							GET
-							<span class="text-blue-400 font-ubuntu text-lg"
+							<span class="text-lg text-blue-400 font-ubuntu"
 								><a href="https://space-note-app.onrender.com/note/test"
 									>/note/test</a
 								></span
@@ -228,15 +228,16 @@
 						</li>
 						<li class="flex justify-between">
 							GET
-							<span class="text-blue-400 font-ubuntu text-lg"
-								><a href="https://space-note-app.onrender.com/note/test/user/652a4a01353018daec2f6a50"
+							<span class="text-lg text-blue-400 font-ubuntu"
+								><a
+									href="https://space-note-app.onrender.com/note/test/user/652a4a01353018daec2f6a50"
 									>/note/test/userId/</a
 								></span
 							>
 						</li>
 						<li class="flex justify-between">
 							GET
-							<span class="text-blue-400 font-ubuntu text-lg"
+							<span class="text-lg text-blue-400 font-ubuntu"
 								><a
 									href="https://space-note-app.onrender.com/note/test/652a4cc7353018daec2f6b36"
 									>/note/test/noteId</a
@@ -245,7 +246,7 @@
 						</li>
 						<li class="flex justify-between">
 							GET
-							<span class="text-blue-400 font-ubuntu text-lg"
+							<span class="text-lg text-blue-400 font-ubuntu"
 								><a href="https://space-note-app.onrender.com/category/test"
 									>/category/test</a
 								></span
@@ -253,7 +254,7 @@
 						</li>
 						<li class="flex justify-between">
 							GET
-							<span class="text-blue-400 font-ubuntu text-lg"
+							<span class="text-lg text-blue-400 font-ubuntu"
 								><a
 									href="https://space-note-app.onrender.com/note/test/user/652f6d23370193cee2e61261"
 									>/category/test/user/userId</a
@@ -262,13 +263,14 @@
 						</li>
 						<li class="flex justify-between">
 							GET
-							<span class="text-blue-400 font-ubuntu text-lg"
+							<span class="text-lg text-blue-400 font-ubuntu"
 								><a
 									href="https://space-note-app.onrender.com/note/test/user/652f6d23370193cee2e61261"
 									>/favourite/test/user/userId</a
 								></span
 							>
 						</li>
+						9
 					</ul>
 				</div>
 			</section>
@@ -277,9 +279,10 @@
 		<footer
 			class="flex flex-col h-[10rem] w-full justify-center items-center bg-gray-300/20"
 		>
-			<p class="text-center text-black/60 font-sans">
+			<p class="font-sans text-center text-black/60">
 				Made by Gideon OKai Boateng and Ozoemena
 			</p>
 		</footer>
 	</body>
+	<script src="../script/index.js"></script>
 </html>
