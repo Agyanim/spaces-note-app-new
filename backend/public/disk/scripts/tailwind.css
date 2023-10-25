@@ -611,6 +611,9 @@ video {
 .mt-\[3rem\]{
   margin-top: 3rem;
 }
+.ml-3{
+  margin-left: 0.75rem;
+}
 .flex{
   display: flex;
 }
@@ -918,6 +921,14 @@ video {
 
   .md\:ml-\[3rem\]{
     margin-left: 3rem;
+  }
+
+  .md\:ml-0{
+    margin-left: 0px;
+  }
+
+  .md\:mt-10{
+    margin-top: 2.5rem;
   }
 
   .md\:flex{
