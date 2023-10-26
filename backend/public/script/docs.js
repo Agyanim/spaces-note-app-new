@@ -1,20 +1,21 @@
-const userUlElement = document.querySelector("#user");
-const noteUlElement = document.querySelector("#note");
+const userUlElement = document.querySelector("#user-list");
+const noteUlElement = document.querySelector("#note-list");
+const categoryUlElement = document.querySelector("#category-list");
 
 const sideMenu = [
 	{
 		id: "user",
 		user: [
 			{
-				id: "user-1",
+				id: "u-create",
 				title: "Create user",
 			},
 			{
-				id: "user-2",
+				id: "u-all",
 				title: "Get all user",
 			},
 			{
-				id: "user-3",
+				id: "u-id",
 				title: " Get user by id",
 			},
 		],
@@ -40,10 +41,32 @@ const sideMenu = [
 			},
 		],
 	},
+	{
+		id: "note",
+		category: [
+			{
+				id: "category-1",
+				title: "Create category",
+			},
+			{
+				id: "category-2",
+				title: "Get all category",
+			},
+			{
+				id: "category-2",
+				title: "Get category by userId",
+			},
+			{
+				id: "category-2",
+				title: "Get category by id",
+			},
+		],
+	},
 ];
 
 const userMenuList = sideMenu.map((userList) => userList.user);
 const noteMenuList = sideMenu.map((noteList) => noteList.note);
+const categoryMenuList = sideMenu.map((categoryList) => categoryList.category);
 
 // function to generate the side menu list
 function generateListMenu(menu) {
@@ -52,7 +75,7 @@ function generateListMenu(menu) {
 	endPointMenu?.map((menu) => {
 		const result = menu?.map((menu) => menu);
 		result?.forEach((menuList) => {
-			Endpoint += `<li class="end-point-list" id="${menuList.id}"><a href="#4">${menuList.title}</a></li>`;
+			Endpoint += `<li class="end-point-list"><a href="#${menuList.id}">${menuList.title}</a></li>`;
 		});
 	});
 	return Endpoint;
@@ -60,5 +83,6 @@ function generateListMenu(menu) {
 
 userUlElement.innerHTML = `${generateListMenu(userMenuList)}`;
 noteUlElement.innerHTML = `${generateListMenu(noteMenuList)}`;
+categoryUlElement.innerHTML = `${generateListMenu(categoryMenuList)}`;
 
 
