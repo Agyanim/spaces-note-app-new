@@ -8,31 +8,31 @@
 		<title>Docs</title>
 	</head>
 	<body class="">
-		<div class="md:grid md:grid-cols-[20%_80%] h-[80rem]">
+		<div class="md:grid md:grid-cols-[20%_80%]">
 			<!-- side menu -->
 			<aside
-				class="overflow-x-auto pt-[5rem] md:flex flex-col items-start hidden bg-gray-100"
+				class="overflow-x-auto pt-[5rem] md:flex flex-col items-start hidden bg-gray-100 h-[50rem] gap-10"
 			>
 				<!-- user section -->
 				<section class="ml-[3rem]">
 					<h1 class="mb-2 text-xl font-bold text-blue-400 font-roboto">
-						<a href="">Users</a>
+						<a href="#users">Users</a>
 					</h1>
-					<ul id="user" class=""></ul>
+					<ul id="user-list" class=""></ul>
 				</section>
 				<!-- note section -->
 				<section class="ml-[3rem]">
 					<h1 class="mb-2 text-xl font-bold text-blue-400 font-roboto">
 						<a href="">Notes</a>
 					</h1>
-					<ul id="note" class=""></ul>
+					<ul id="note-list" class=""></ul>
 				</section>
 				<!-- Category section -->
 				<section class="ml-[3rem]">
 					<h1 class="mb-2 text-xl font-bold text-blue-400 font-roboto">
 						<a href="">category</a>
 					</h1>
-					<ul id="category" class=""></ul>
+					<ul id="category-list" class=""></ul>
 				</section>
 			</aside>
 			<!-- Navigation section -->
@@ -50,7 +50,7 @@
 				<!-- Main section -->
 				<main class="">
 					<!-- Introduction -->
-					<div class="md:ml-[3rem] md:mt-[10rem] md:w-[40%] mt-[3rem]">
+					<div class="md:ml-[3rem] md:mt-[5rem] md:w-[80%] lg:w-[60%] mt-[3rem] mb-[3rem]">
 						<h1
 							class="ml-5 text-2xl text-pink-600 lg:text-3xl font-playfair text-bold font"
 						>
@@ -67,11 +67,57 @@
 							within Space Note App for your projects:
 						</p>
 					</div>
+					<!-- user endpoint -->
+					<div id="users" class="md:ml-[4rem]">
+						<h1
+							class="text-2xl text-pink-600 lg:text-3xl font-playfair text-bold font"
+						>
+							Users
+						</h1>
+						<!-- Creating user -->
+						<div id="u-create">
+							<h3 class="text-black font-semibold my-[2rem] text-lg">
+								Create user
+							</h3>
+							<pre class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base">
+							<code
+								class=""
+							>
+	<span class="ml-[-2rem] lg:ml-0">fetch('https://space-note-app.onrender.com/user',{
+		method:"POST",
+		body:JSON.stringify(
+			{
+				email:'text@mail.com',
+				password:"password"
+			}
+		)
+	})
+	.then(res=>res.json())
+	.then(json=>console.log(json))</span>
+							</code>
+						</pre>
+						</div>
+						<!-- Get all users -->
+						<div id="u-all">
+							<h3 class="text-black font-semibold my-[2rem] text-lg">
+								Gat all users
+							</h3>
+							<pre class="bg-gray-100 mb-[3rem] w-full lg:w-[70%] overflow-x-auto text-sm md:text-base md:w-[90%]">
+								<code class="">
+	<span>fetch('https://space-note-app.onrender.com/user')
+	.then(res=>res.json())
+	.then(json=>console.log(json))</span>
+								</code>
+								</pre>
+						</div>
+					</div>
 				</main>
 			</div>
 			<!-- Footer section -->
-			<footer class="bg-slate-400 h-[5rem] col-span-2">
-				<h1>footer</h1>
+			<footer
+				class="h-[10rem] col-span-2 text-center flex justify-center items-center bg-gray-100"
+			>
+				<p class="text-black/60">Made by Gideon OKai Boateng and Ozoemena</p>
 			</footer>
 		</div>
 	</body>
