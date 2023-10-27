@@ -1,6 +1,12 @@
 const userUlElement = document.querySelector("#user-list");
 const noteUlElement = document.querySelector("#note-list");
 const categoryUlElement = document.querySelector("#category-list");
+const createUserBtnElement = document.querySelector(
+	"#u-create-response-toggle-btn"
+);
+const createUserResponseContentElement = document.querySelector(
+	"#u-create-response-content"
+);
 
 const sideMenu = [
 	{
@@ -24,15 +30,15 @@ const sideMenu = [
 		id: "note",
 		note: [
 			{
-				id: "note-1",
+				id: "create-note",
 				title: "Create note",
 			},
 			{
-				id: "note-2",
+				id: "get-all-note",
 				title: "Get all note",
 			},
 			{
-				id: "note-2",
+				id: "get-note-UserId",
 				title: "Get note by userId",
 			},
 			{
@@ -42,22 +48,22 @@ const sideMenu = [
 		],
 	},
 	{
-		id: "note",
+		id: "category",
 		category: [
 			{
-				id: "category-1",
+				id: "create-category",
 				title: "Create category",
 			},
 			{
-				id: "category-2",
+				id: "get-all-category",
 				title: "Get all category",
 			},
 			{
-				id: "category-2",
+				id: "get-category-userId",
 				title: "Get category by userId",
 			},
 			{
-				id: "category-2",
+				id: "get-category-id",
 				title: "Get category by id",
 			},
 		],
@@ -85,4 +91,12 @@ userUlElement.innerHTML = `${generateListMenu(userMenuList)}`;
 noteUlElement.innerHTML = `${generateListMenu(noteMenuList)}`;
 categoryUlElement.innerHTML = `${generateListMenu(categoryMenuList)}`;
 
-
+createUserBtnElement.addEventListener("click", () => {
+	createUserResponseContentElement.classList.toggle("show-output")
+	if (createUserBtnElement.textContent.trim() ==="Show output") {
+		createUserBtnElement.textContent = "Hide output";
+	} 
+	else if(createUserBtnElement.textContent.trim() == "Hide output") {
+		createUserBtnElement.textContent = "Show output";
+	}
+});

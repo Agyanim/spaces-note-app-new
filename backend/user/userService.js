@@ -24,7 +24,7 @@ return await userModel.findOne({email})
 }
 // Fetching all user account services
 export const getAllAccountService = async () => {
-  return await userModel.find();
+  return await userModel.find().select(["-password","-refreshToken"]);
 };
 // Fetching a user account using user id service
 export const getUserAccountByIdService=async(userId)=>{
@@ -50,7 +50,7 @@ export const createUserProfileService=async(userId)=>{
     profession:"",
     imageURL:""
   })
-  return await userProfile.save()
+  return await userProfile.save().select(["-password"])
 }
 // getting user profile together with the user account using user id
 export const getUserProfileExtendedByUserIdService=async(pipeline)=>{
@@ -58,15 +58,15 @@ export const getUserProfileExtendedByUserIdService=async(pipeline)=>{
 }
 // getting user profile using the user id
 export const getUserProfileByUserId=async(userId)=>{
-  return await userProfileModel.findOne({userId})
+  return await userProfileModel.findOne({userId}).select(["-password"])
 }
 //updating user profile using the user account id
 export const updateUserProfileService=async(userId,update)=>{
-  return await userProfileModel.findOneAndUpdate({userId},update,{new:true})
+  return await userProfileModel.findOneAndUpdate({userId},update,{new:true}).select(["-password"])
 }
 // getting user profile using user id
 export const getUserProfileByUserIdService=async(userId)=>{
-return await userProfileModel.findOne({userId})
+return await userProfileModel.findOne({userId}).select(["-password"])
 }
 
 // deleting user profile using the user id

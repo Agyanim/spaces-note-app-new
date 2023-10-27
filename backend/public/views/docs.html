@@ -4,7 +4,6 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../disk/scripts/tailwind.css" />
-
 		<title>Docs</title>
 	</head>
 	<body class="">
@@ -50,9 +49,11 @@
 				<!-- Main section -->
 				<main class="">
 					<!-- Introduction -->
-					<div class="md:ml-[3rem] md:mt-[5rem] md:w-[80%] lg:w-[60%] mt-[3rem] mb-[3rem]">
+					<div
+						class="md:ml-[3rem] md:mt-[5rem] md:w-[80%] lg:w-[60%] mt-[3rem] mb-[3rem]"
+					>
 						<h1
-							class="ml-5 text-2xl text-pink-600 lg:text-3xl font-playfair text-bold font"
+							class="ml-5 text-2xl text-pink-600 lg:text-3xl font-playfair text-bold font text-center md:text-left"
 						>
 							How to use it
 						</h1>
@@ -70,46 +71,538 @@
 					<!-- user endpoint -->
 					<div id="users" class="md:ml-[4rem]">
 						<h1
-							class="text-2xl text-pink-600 lg:text-3xl font-playfair text-bold font"
+							class="text-2xl text-pink-600 lg:text-3xl font-playfair text-bold font text-center md:text-left"
 						>
 							Users
 						</h1>
 						<!-- Creating user -->
 						<div id="u-create">
-							<h3 class="text-black font-semibold my-[2rem] text-lg">
+							<h2
+								class="text-black font-semibold my-[2rem] text-lg ml-5 md:ml-0"
+							>
 								Create user
-							</h3>
-							<pre class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base">
+							</h2>
+							<pre
+								class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base"
+							>
 							<code
 								class=""
 							>
-	<span class="ml-[-2rem] lg:ml-0">fetch('https://space-note-app.onrender.com/user',{
-		method:"POST",
-		body:JSON.stringify(
-			{
-				email:'text@mail.com',
-				password:"password"
-			}
-		)
-	})
-	.then(res=>res.json())
-	.then(json=>console.log(json))</span>
+<span class="ml-[-2rem] lg:ml-0">fetch('https://space-note-app.onrender.com/user',{
+	method:"POST",
+	body:JSON.stringify(
+		{
+			email:'text@mail.com',
+			password:"password"
+		}
+	)
+})
+.then(res=>res.json())
+.then(json=>console.log(json))</span>
 							</code>
 						</pre>
 						</div>
+						<!-- Response -->
+						<div id="">
+							<button
+								id="u-create-response-toggle-btn"
+								class="border border-solid border-pink-600 px-2 ml-5 md:ml-0 md:px-8 py-2 text-pink-600 font-bold mb-5 hover:bg-pink-600 hover:text-white rounded transition-all duration-500"
+							>
+								Show output
+							</button>
+							<pre
+								id="u-create-response-content"
+								class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base hidden"
+							>
+			<code>
+		<span>
+	{
+		"success": boolean,
+		"message": string,
+		"userAccount": {
+			"email": string,
+			"password": string,
+			"refreshToken": string,
+			"_id": string,
+			"createdAt":timestamp,
+			"updatedAt":timestamp,
+			"__v": 0
+		},
+		"userProfile": {
+			"firstName": string,
+			"lastName": string,
+			"profession":string,
+			"userId": string,
+			"_id": string,
+			"createdAt": timestamp,
+			"updatedAt": timestamp,
+			"__v": 0
+		}
+		}
+	</span>
+		</code>
+	</pre>
+						</div>
 						<!-- Get all users -->
 						<div id="u-all">
-							<h3 class="text-black font-semibold my-[2rem] text-lg">
+							<h2
+								class="text-black font-semibold my-[2rem] text-lg ml-5 md:ml-0"
+							>
 								Gat all users
-							</h3>
-							<pre class="bg-gray-100 mb-[3rem] w-full lg:w-[70%] overflow-x-auto text-sm md:text-base md:w-[90%]">
-								<code class="">
-	<span>fetch('https://space-note-app.onrender.com/user')
-	.then(res=>res.json())
-	.then(json=>console.log(json))</span>
-								</code>
+							</h2>
+							<pre
+								class="bg-gray-100 mb-[3rem] w-full lg:w-[70%] overflow-x-auto text-sm md:text-base md:w-[90%] pr-5 md:pr-0"
+							>
+	<code class="">
+	<span>fetch('https://space-note-app.onrender.com/user',{
+	method:"GET"	
+	headers: {Authorization: 'Bearer {token}'}
+	})
+		.then(res=>res.json())
+		.then(json=>console.log(json))</span>
+		</code>
 								</pre>
 						</div>
+						<!-- Response -->
+						<div id="">
+							<button
+								id="u-all-response-btn"
+								class="border border-solid border-pink-600 px-2 ml-5 md:ml-0 md:px-8 py-2 text-pink-600 font-bold mb-5 hover:bg-pink-600 hover:text-white rounded transition-all duration-500"
+							>
+								Show output
+							</button>
+
+							<pre
+								id="u-all-response-content"
+								class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base"
+							>
+			<code
+								
+								>
+	<span >
+	{
+	"success": true,
+	"accounts": [
+		{
+			"_id": "string",
+			"email": "string",
+			"createdAt": "timestamp",
+			"updatedAt": "timestamp",
+			"__v": 0
+		}
+		]
+	}
+	</span>
+			</code>
+			</pre>
+						</div>
+						<!-- Get  user by id -->
+						<div id="u-userId">
+							<h2
+								class="text-black font-semibold my-[2rem] text-lg ml-5 md:ml-0"
+							>
+								Gat user by userId
+							</h2>
+							<pre
+								class="bg-gray-100 mb-[3rem] w-full lg:w-[70%] overflow-x-auto text-sm md:text-base md:w-[90%] pr-5 md:pr-0"
+							>
+	<code class="">
+	<span>fetch('https://space-note-app.onrender.com/user/userId',{
+		method:"GET"	
+		headers: {Authorization: 'Bearer {token}'}
+		})
+		.then(res=>res.json())
+		.then(json=>console.log(json))</span>
+		</code>
+								</pre>
+						</div>
+						<!-- Response -->
+						<div id="">
+							<button
+								id="u-all-response-btn"
+								class="border border-solid border-pink-600 px-2 ml-5 md:ml-0 md:px-8 py-2 text-pink-600 font-bold mb-5 hover:bg-pink-600 hover:text-white rounded transition-all duration-500"
+							>
+								Show output
+							</button>
+
+							<pre
+								id="u-all-response-content"
+								class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base"
+							>
+			<code
+								
+								>
+	<span >
+	{
+		"success": boolean, 
+		"userAccount": { 
+			"email": string,
+			"password": string,
+			"refreshToken": string,
+			"_id": string,
+			"createdAt": timestamp,
+			"updatedAt":timestamp,
+			"__v": 0
+			}
+	}
+	</span>
+			</code>
+			</pre>
+						</div>
+						<!-- End of section -->
+						<!-- Update user profile -->
+						<div id="u-userId">
+							<h2
+								class="text-black font-semibold my-[2rem] text-lg ml-5 md:ml-0"
+							>
+								Update user profile
+							</h2>
+							<pre
+								class="bg-gray-100 mb-[3rem] w-full lg:w-[70%] overflow-x-auto text-sm md:text-base md:w-[90%] pr-5 md:pr-0"
+							>
+	<code class="">
+	<span>fetch('https://space-note-app.onrender.com//user/profile/userId',{
+		method:"PUT"	
+		headers: {Authorization: 'Bearer {token}'}
+		})
+		.then(res=>res.json())
+		.then(json=>console.log(json))</span>
+	</code>
+								</pre>
+						</div>
+						<!-- Response -->
+						<div id="">
+							<button
+								id="u-all-response-btn"
+								class="border border-solid border-pink-600 px-2 ml-5 md:ml-0 md:px-8 py-2 text-pink-600 font-bold mb-5 hover:bg-pink-600 hover:text-white rounded transition-all duration-500"
+							>
+								Show output
+							</button>
+
+							<pre
+								id="u-all-response-content"
+								class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base"
+							>
+			<code
+								
+								>
+	<span >
+	{
+		"success": boolean, 
+		"userAccount": { 
+			"email": string,
+			"password": string,
+			"refreshToken": string,
+			"_id": string,
+			"createdAt": timestamp,
+			"updatedAt":timestamp,
+			"__v": 0
+			}
+	}
+	</span>
+			</code>
+			</pre>
+						</div>
+						<!-- End of section -->
+						<!-- Get user with profile details -->
+						<div id="u-userId">
+							<h2
+								class="text-black font-semibold my-[2rem] text-lg ml-5 md:ml-0"
+							>
+								Get user with profile details
+							</h2>
+							<pre
+								class="bg-gray-100 mb-[3rem] w-full lg:w-[70%] overflow-x-auto text-sm md:text-base md:w-[90%] pr-5 md:pr-0"
+							>
+	<code class="">
+	<span>fetch('https://space-note-app.onrender.com//user/profile/userId',{
+		method:"GET"	
+		headers: {Authorization: 'Bearer {token}'}
+		})
+		.then(res=>res.json())
+		.then(json=>console.log(json))</span>
+		</code>
+								</pre>
+						</div>
+						<!-- Response -->
+						<div id="">
+							<button
+								id="u-all-response-btn"
+								class="border border-solid border-pink-600 py-2 text-pink-600 font-bold mb-5 hover:bg-pink-600 hover:text-white rounded transition-all duration-500 px-2 ml-5 md:ml-0 md:px-8"
+							>
+								Show output
+							</button>
+
+							<pre
+								id="u-all-response-content"
+								class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base"
+							>
+			<code
+								
+								>
+	<span >
+	{
+		"success": boolean,
+		"userProfile": {
+		"_id": "string",
+		"firstName": "string",
+		"lastName": "string",
+		"profession": "string",
+		"imageURL": "string",
+		"userId": "string",
+		"createdAt": "timestamp",
+		"updatedAt": "timestamp",
+
+		"userAccount": [
+			{
+				"email": "string",
+				"refreshToken": "string
+				"createdAt": "timestamp",
+				"updatedAt": "timestamp"
+			}]
+		}
+	}
+	</span>
+			</code>
+			</pre>
+						</div>
+						<!-- End of section -->
+						<!-- Upload user profile image -->
+						<div id="u-userId">
+							<h2
+								class="text-black font-semibold my-[2rem] text-lg ml-5 md:ml-0"
+							>
+								Upload user profile Image
+							</h2>
+							<pre
+								class="bg-gray-100 w-full lg:w-[70%] overflow-x-auto text-sm md:text-base md:w-[90%] pr-5 md:pr-0"
+							>
+	<code class="">
+	<span>fetch('https://space-note-app.onrender.com//user/profile/userId',{
+		method:"PUT"	
+		headers: {Authorization: 'Bearer {token}'},
+		{
+			image: jpg|jpeg|png|svg
+		}
+		})
+		.then(res=>res.json())
+		.then(json=>console.log(json))</span>
+		</code>
+								</pre>
+							<p class="mb-[3rem]">Note: Image Field name must be "upload"</p>
+						</div>
+						<!-- Response -->
+						<div id="">
+							<button
+								id="u-all-response-btn"
+								class="border border-solid border-pink-600 py-2 text-pink-600 font-bold mb-5 hover:bg-pink-600 hover:text-white rounded transition-all duration-500 px-2 ml-5 md:ml-0 md:px-8"
+							>
+								Show output
+							</button>
+
+							<pre
+								id="u-all-response-content"
+								class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base"
+							>
+			<code
+								
+								>
+		<span >
+		{
+			"success": true,
+			"message": string,
+			"imageURL": string
+		}
+		</span>
+			</code>
+			</pre>
+						</div>
+						<!-- End of section -->
+						<!-- Upload user profile image -->
+						<div id="u-userId">
+							<h2
+								class="text-black font-semibold my-[2rem] text-lg ml-5 md:ml-0"
+							>
+								Get user profile Image
+							</h2>
+							<pre
+								class="bg-gray-100 w-full lg:w-[70%] mb-[3rem] overflow-x-auto text-sm md:text-base md:w-[90%] pr-5 md:pr-0"
+							>
+	<code class="">
+	<span>fetch('https://space-note-app.onrender.com//user/profile/userId',{
+		method:"GET"	
+		headers: {Authorization: 'Bearer {token}'},
+		{
+			image: jpg|jpeg|png|svg
+		}
+		})
+		.then(res=>res.json())
+		.then(json=>console.log(json))</span>
+		</code>
+								</pre>
+						</div>
+						<!-- Response -->
+						<div id="">
+							<button
+								id="u-all-response-btn"
+								class="border border-solid border-pink-600 py-2 text-pink-600 font-bold mb-5 hover:bg-pink-600 hover:text-white rounded transition-all duration-500 px-2 ml-5 md:ml-0 md:px-8"
+							>
+								Show output
+							</button>
+
+							<pre
+								id="u-all-response-content"
+								class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base"
+							>
+			<code
+								
+								>
+		<span >
+		{
+			"success": true,
+			"message": string,
+			"imageURL": string
+		}
+		</span>
+			</code>
+			</pre>
+						</div>
+						<!-- End of section -->
+					</div>
+					<!-- note endpoint -->
+
+					<div id="note">
+						<h1
+							class="text-2xl text-pink-600 lg:text-3xl font-playfair text-bold font text-center md:text-left"
+						>
+							Notes
+						</h1>
+
+						<!-- Create note -->
+						<div id="create-note">
+							<h2
+								class="text-black font-semibold my-[2rem] text-lg ml-5 md:ml-0"
+							>
+								Create note
+							</h2>
+							<pre
+								class="bg-gray-100 w-full lg:w-[70%] mb-[3rem] overflow-x-auto text-sm md:text-base md:w-[90%] pr-5 md:pr-0"
+							>
+		<code class="">
+		<span>fetch('https://space-note-app.onrender.com/note/',{
+			method:"POST"	
+			headers: {Authorization: 'Bearer {token}'},
+			{
+				title: 'string',
+				description: 'string',
+				categoryId: 'string',  <span class="text-black/40">//default is "No category"</span>
+				userId: 'string'
+			}
+			})
+			.then(res=>res.json())
+			.then(json=>console.log(json))</span>
+			</code>
+									</pre>
+						</div>
+						<!-- Response -->
+						<div id="">
+							<button
+								id="u-all-response-btn"
+								class="border border-solid border-pink-600 px-2 ml-5 md:ml-0 md:px-8 py-2 text-pink-600 font-bold mb-5 hover:bg-pink-600 hover:text-white rounded transition-all duration-500"
+							>
+								Show output
+							</button>
+
+							<pre
+								id="u-all-response-content"
+								class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base"
+							>
+				<code
+									
+									>
+		<span >
+			{
+				"message": "All notes fetched successfully",
+				"Notes":{
+				"isTrashed": boolean,  <span class="text-black/40">//default is false</span>
+				"_id": "string",
+				"title": "string",
+				"description": "string",
+				"favourite": boolean,  <span class="text-black/40">//default is false</span>
+				"categoryId": "string",
+				"userId": "string",
+				"createdAt": "timestamp",
+				"updatedAt": "timestamp",
+				"__v": 0
+				}
+			}	
+	</span>
+				</code>
+				</pre>
+						</div>
+						<!-- End of section -->
+						<!-- get notes by userId -->
+						<div id="get-note-userId">
+							<h2
+								class="text-black font-semibold my-[2rem] text-lg ml-5 md:ml-0"
+							>
+								Get notes by userId
+							</h2>
+							<pre
+								class="bg-gray-100 w-full lg:w-[70%] mb-[3rem] overflow-x-auto text-sm md:text-base md:w-[90%] pr-5 md:pr-0"
+							>
+		<code class="">
+		<span>fetch('https://space-note-app.onrender.com/note/userId',{
+			method:"GET"	
+			headers: {Authorization: 'Bearer {token}'},
+			})
+			.then(res=>res.json())
+			.then(json=>console.log(json))</span>
+			</code>
+									</pre>
+						</div>
+						<!-- Response -->
+						<div id="">
+							<button
+								id="u-all-response-btn"
+								class="border border-solid border-pink-600 px-2 ml-5 md:ml-0 md:px-8 py-2 text-pink-600 font-bold mb-5 hover:bg-pink-600 hover:text-white rounded transition-all duration-500"
+							>
+								Show output
+							</button>
+
+							<pre
+								id="u-all-response-content"
+								class="bg-gray-100 mb-[3rem] md:w-[90%] lg:w-[70%] w-full overflow-x-auto text-sm md:text-base"
+							>
+				<code
+									
+									>
+		<span >
+
+			
+			{
+				"message": "All notes fetched successfully",
+				"Notes":[
+				{
+					"isTrashed": boolean,  
+					"_id": "string",
+					"title": "string",
+					"description": "string",
+					"favourite": boolean,  
+					"categoryId": "string",
+					"userId": "string",
+					"createdAt": "timestamp",
+					"updatedAt": "timestamp",
+					"__v": 0
+					},...
+				]
+			}
+				
+	</span>
+				</code>
+				</pre>
+						</div>
+						<!-- End of section -->
 					</div>
 				</main>
 			</div>
