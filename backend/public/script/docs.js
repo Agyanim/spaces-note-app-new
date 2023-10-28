@@ -17,17 +17,37 @@ const sideMenu = [
 				title: "Create user",
 			},
 			{
-				id: "u-all",
+				id: "get-u-all",
 				title: "Get all user",
 			},
 			{
-				id: "u-id",
+				id: "get-u-userId",
 				title: " Get user by id",
+			},
+			{
+				id: "update-u-profile",
+				title: " Update user profile",
+			},
+			{
+				id: "get-u-profile",
+				title: " Get user profile",
+			},
+			{
+				id: "upload-u-profile-image",
+				title: " upload user profile image",
+			},
+			{
+				id: "get-u-profile-image",
+				title: " Get user profile image",
+			},
+			{
+				id: "delete-u",
+				title: " Delete user",
 			},
 		],
 	},
 	{
-		id: "note",
+		id: "notes",
 		note: [
 			{
 				id: "create-note",
@@ -42,8 +62,16 @@ const sideMenu = [
 				title: "Get note by userId",
 			},
 			{
-				id: "note-2",
+				id: "get-note-id",
 				title: "Get note by id",
+			},
+			{ 
+				id: "update-note",
+				title: "Update note"
+			},
+			{ 
+				id: "delete-note",
+				title: "Delete note"
 			},
 		],
 	},
@@ -92,11 +120,10 @@ noteUlElement.innerHTML = `${generateListMenu(noteMenuList)}`;
 categoryUlElement.innerHTML = `${generateListMenu(categoryMenuList)}`;
 
 createUserBtnElement.addEventListener("click", () => {
-	createUserResponseContentElement.classList.toggle("show-output")
-	if (createUserBtnElement.textContent.trim() ==="Show output") {
+	createUserResponseContentElement.classList.toggle("show-output");
+	if (createUserBtnElement.textContent.trim() === "Show output") {
 		createUserBtnElement.textContent = "Hide output";
-	} 
-	else if(createUserBtnElement.textContent.trim() == "Hide output") {
+	} else if (createUserBtnElement.textContent.trim() == "Hide output") {
 		createUserBtnElement.textContent = "Show output";
 	}
 });
